@@ -1,0 +1,35 @@
+<h1>cadastro</h1>
+
+<p ng-show="msg">ERRO SERVER</p>
+
+<div class="col-md-6">
+
+<form novalidate name="formCadFoto" ng-submit="submete()" class="row">
+
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input class="form-control" name="titulo" ng-model="foto.titulo" required type="text">
+  </div>
+
+  <div class="form-group">
+    <label for="url">Url</label>
+    <input class="form-control" name="url" ng-model="foto.url" required type="url">
+    <p ng-show="formCadFoto.url.$error.url && formCadFoto.$submitted">URL mal formada</p>
+    <p ng-show="formCadFoto.url.$error.required && formCadFoto.$submitted">Requerido</p>
+  </div>
+
+  <div class="form-group">
+    <label for="descricao">Descricao</label>
+    <textarea class="form-control" name="descricao" ng-model="foto.desc" >
+    </textarea>
+  </div>
+
+  <input type="submit"  value="Salvar">
+
+</form>
+</div>
+
+<div class="col-md-6">
+  <h1>Foto</h1>
+  <minhaFoto url="{{foto.url}}" titulo="{{foto.titulo}}"></minhaFoto>
+</div>

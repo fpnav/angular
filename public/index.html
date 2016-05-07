@@ -4,31 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <script src="js/lib/angular.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/controllers/FotosController.js"></script>
-        <script src="js/directives/panelTmp.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/css/efeitos.css">
+        <script src="/js/lib/angular.min.js"></script>
+        <script src="/js/lib/angular-animate.min.js"></script>
+        <script src="/js/lib/angular-route.min.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/controllers/FotosController.js"></script>
+        <script src="/js/controllers/CadastroController.js"></script>
+        <script src="/js/directives/panelTmp.js"></script>
+
+        <base href="/"> <!--Isso quer dizer que -->
     </head>
     <body>
-        <div class="container" ng-controller="FotosController">
-
-            <h1 class="text-center">Alurapic</h1>
-            <panel-tmp titulo="{{foto.titulo}}" ng-repeat="foto in fotos" fotoatual="foto">
-              <!-- <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}"> -->
-              <minha-foto url="{{foto.url}}" nome="{{foto.titulo}}">
-            </panel-tmp>
-
-
-
-            <!--
-            <div class="col-md-2" ng-repeat="foto in fotos">
-              <img class="img-responsive center-block" ng-src="{{foto.url}}" alt="{{foto.titulo}}">
-                <h3 class="panel-title text-center">{{foto.titulo}}</h3>
+          <div class="container">
+            <div class="jumbotron">
+              <h1 class="text-center">Pictures</h1>
             </div>
-          -->
 
+            <ng-view></ng-view>
 
         </div> <!-- fim container -->
     </body>
